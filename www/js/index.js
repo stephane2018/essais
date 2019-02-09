@@ -47,3 +47,47 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+var app= angular.module('MonApplication', ["ngRoute"]);
+app.config(function ($routeProvider) {
+    $routeProvider
+    .when("/",{
+        templateUrl: "pages/login.html",
+        controller: "AcceuilController"
+
+    })
+    .when("/pages/acceuil",{
+        templateUrl: "pages/acceuil.html",
+        controller: "HomeController"
+    })
+    
+});
+app.controller('AcceuilController',['$scope', '$timeout', '$filter', function($scope, $timeout, $filter) {
+    $scope.handle= 'first Controller ';
+    
+
+}]);
+
+app.controller('HomeController',['$scope', '$timeout', '$filter', function($scope, $timeout, $filter) {
+    $scope.handle= 'Second Contoler';
+    /*$timeout(function () {
+        $scope.name="StephaneBiteb";
+
+    }, 3000);*/
+    $scope.lowercasehandler = function(){
+        return $filter('lowercase')($scope.handle);
+    };
+    $scope.validerFormulaire= function () {  
+      
+    }
+    
+
+}]);
+app.controller('ExampleController', ['$scope', function($scope) {
+ var email= $scope.email;
+ var password= $scope.password;
+ $scope.validerLeFormulaire= function () {  
+   alert($scope.email.text);
+  
+ };
+}]);

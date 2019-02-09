@@ -1,0 +1,31 @@
+<a href="/pages/acceuil.html"> acceuil</a>
+<p>{{handle}}</p>
+<div class="row align-items-center h-100" ng-controller="AcceuilController">
+<div class="col-9 mx-auto formulaire"> 
+        <center><img src="../img/logo.png"></center>
+       
+            <form name="myForm" ng-controller="ExampleController"> 
+                
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" name="InputText" class="form-control " id="exampleInputEmail1"  aria-describedby="emailHelp" ng-model="email"> 
+                     
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password" >
+                      <small id="emailHelp" class="form-text text-muted"> 
+                          <div class="alert alert-danger" role="alert" ng-hide="password.length > 0">
+                         
+                          </div>
+                        
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <center><button type="submit" class="btn  styleButton" ng-click="validerLeFormulaire()" >Submit</button></center>
+                  </form>
+        </div>
+</div>
