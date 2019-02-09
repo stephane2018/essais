@@ -56,38 +56,46 @@ app.config(function ($routeProvider) {
         controller: "AcceuilController"
 
     })
-    .when("/pages/acceuil",{
+    .when("/acceuil",{
         templateUrl: "pages/acceuil.html",
         controller: "HomeController"
     })
     
 });
-app.controller('AcceuilController',['$scope', '$timeout', '$filter', function($scope, $timeout, $filter) {
+app.controller('AcceuilController',['$scope', '$timeout', '$filter', function($scope) {
     $scope.handle= 'first Controller ';
-    
-
-}]);
-
-app.controller('HomeController',['$scope', '$timeout', '$filter', function($scope, $timeout, $filter) {
-    $scope.handle= 'Second Contoler';
-    /*$timeout(function () {
-        $scope.name="StephaneBiteb";
-
-    }, 3000);*/
-    $scope.lowercasehandler = function(){
-        return $filter('lowercase')($scope.handle);
-    };
-    $scope.validerFormulaire= function () {  
+    $scope.validerLeFormulaire= function () {  
+        if ($scope.myForm.$valid) {
+          window.location="/pages/acceuil.html";
+        }else{
+            alert("formulaire invalie veuillez rempir tout les champs");
+        }
       
-    }
-    
+     };
 
 }]);
+
+app.controller('HomeController',['$scope', '$timeout', '$filter', function($scope) {
+    $scope.handle= 'Second Contoler';
+   
+    $scope.validerFormulaire= function () {  
+        if ($scope.myForm.$valid) {
+            window.location="/pages/acceuil.html";
+          }
+        
+    }
+
+}]);
+
 app.controller('ExampleController', ['$scope', function($scope) {
- var email= $scope.email;
- var password= $scope.password;
+
  $scope.validerLeFormulaire= function () {  
-   alert($scope.email.text);
+    if ($scope.myForm.isvalid) {
+      window.location="/pages/acceuil";
+    }else{
+        alert("formulaire invalie veuillez rempir tout les champs");
+    }
   
  };
+
 }]);

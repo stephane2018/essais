@@ -7,8 +7,7 @@ body {
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
     background-attachment:fixed;
-    background-image: linear-gradient(to bottom, #1483cb, #0091d5, #00a0dd, #00aee5, #12bceb);
-
+  
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
@@ -110,4 +109,7 @@ h1 {
  font-weight: bold;
  border-radius:3px;
  height:40px;
+}
+.red{
+    color: red !important;
 }
