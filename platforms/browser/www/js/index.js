@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+'use strict';
 var app = {
     // Application Constructor
     initialize: function() {
@@ -51,22 +52,24 @@ var app = {
 var app= angular.module('MonApplication', ["ngRoute"]);
 app.config(function ($routeProvider) {
     $routeProvider
-    .when("/",{
-        templateUrl: "pages/login.html",
-        controller: "AcceuilController"
-
-    })
-    .when("/acceuil",{
-        templateUrl: "pages/acceuil.html",
-        controller: "HomeController"
-    })
+    .when('/acceuil', {
+      controller: 'HomeController',
+      templateUrl: 'pages/acceuil.html'
     
+    }) 
+    .when('/', {
+      controller: 'AcceuilController',
+      templateUrl: 'pages/login.html'
+     
+    })
 });
+
+
 app.controller('AcceuilController',['$scope', '$timeout', '$filter', function($scope) {
     $scope.handle= 'first Controller ';
     $scope.validerLeFormulaire= function () {  
-        if ($scope.myForm.$valid) {
-          window.location="/pages/acceuil.html";
+        if (this.myForm.$valid) {
+          window.location="#!/acceuil";
         }else{
             alert("formulaire invalie veuillez rempir tout les champs");
         }
@@ -77,7 +80,7 @@ app.controller('AcceuilController',['$scope', '$timeout', '$filter', function($s
 
 app.controller('HomeController',['$scope', '$timeout', '$filter', function($scope) {
     $scope.handle= 'Second Contoler';
-   
+    
     $scope.validerFormulaire= function () {  
         if ($scope.myForm.$valid) {
             window.location="/pages/acceuil.html";

@@ -1,27 +1,57 @@
-
-<div class="row align-items-center h-100" ng-controller="HomeController">
-    <a href="/acceuil">Lien</a>
-    <form name="myForm" ng-submit="validerLeFormulaire()" novalidate> 
-        <div class="form-group"  ng-class="{ 'has-error' : myForm.InputText.$invalid && !myForm.InputText.$pristine }">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="InputText" class="form-control " id="exampleInputEmail1"  aria-describedby="emailHelp" ng-model="email"> 
-         
-          <small id="emailHelp" class="form-text text-muted ">Nous partagerons pas cette infos . </small>
-          <small id="emailHelp" ng-show="myForm.InputText.$invalid && !myForm.InputText.$pristine " class="form-text text-muted red">Ceci n'est pas une adresse email </small>
-        </div>
-        <div class="form-group"  ng-class="{ 'has-error' : myForm.Password.$invalid && !myForm.Password.$pristine }">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="Password" name="password" placeholder="Password" ng-model="password" ng-model="Password" ng-minlength="3" ng-maxlength="8"  >
-            <div class="red" role="alert" ng-show="myForm.password.$invalid && !myForm.password.$pristine "><br>
-              le mot de passe doit etre d'au moins 3 caractères
-             </div>
-            
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="RemenberMe">
-          <label class="form-check-label" for="exampleCheck1">Se SOuvenir de moi </label>
-        </div>
-        <center><button type="submit" class="btn  styleButton" ng-disabled="myForm.InputText.$dirty && myForm.InputText.$invalid ||
-          myForm.Password.$dirty && myForm.Password.$invalid &&  myForm.RemenberMe.$dirty && myForm.RemenberMe.$invalid"  >Submit</button></center>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fa fa-home"></i>
+            Home
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-danger">11</span>
+            </i>
+            Messages
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-danger">11</span>
+            </i>
+            Disabled
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-bell">
+              <span class="badge badge-info">11</span>
+            </i>
+            Disabled
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-globe">
+              <span class="badge badge-success">11</span>
+            </i>
+            Disabled
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-  </div>
+    </div>
+  </nav>
+  
