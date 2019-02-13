@@ -1,6 +1,8 @@
 <div class="d-flex justify-content-center align-content-center" ng-controller="HomeController">
-    <a href="#!/acceuil">Lien acceuil Page formulaire </a>
-    <form name="myForm" class="formulaire" ng-submit="validerLeFormulaire()" novalidate> 
+    <!--<a href="#!/acceuil">Lien acceuil Page formulaire </a>-->
+  
+    <form name="myForm" class="formulaire" ng-submit="validerLeFormulaire()" novalidate>   
+        <center><img src="../img/logo.png"></center>
         <div class="form-group"  ng-class="{ 'has-error' : myForm.InputText.$invalid && !myForm.InputText.$pristine }">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" name="InputText" class="form-control " id="exampleInputEmail1"  aria-describedby="emailHelp" ng-model="email"> 
